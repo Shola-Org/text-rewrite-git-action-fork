@@ -13,3 +13,5 @@ jobs:
       with:
         ref: main
     - uses: imba-tjd/rebase-upstream-action@master
+      with:
+        branch: main
