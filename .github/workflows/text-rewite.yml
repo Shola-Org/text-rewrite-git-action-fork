@@ -1,18 +1,36 @@
-name: text-rewrite
+name: replace-brand-symbols
 on:
-  workflow_dispatch:   # run manually
+  workflow_dispatch:
   push:
     branches:
-      - 'main'
-      - 'master'
+      - main
+      - master
+
 jobs:
-  sync:
+  currency-replace:
     runs-on: ubuntu-latest
+    name: A job to find and replace currency symbols
     steps:
-    - uses: actions/checkout@v3
-      with:
-        ref: main
-        fetch-depth: 0
-    - uses: imba-tjd/rebase-upstream-action@master
-      with:
-        branch: main
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "USD"
+          replace: "EUR"
+          regex: false
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          commit-message: Find and replace currency
+          title: '[Automated PR] Find and replace currency'
+          body: |
+            Found currency instances that can be replaced
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
