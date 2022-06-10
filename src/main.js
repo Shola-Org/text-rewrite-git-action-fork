@@ -1,4 +1,4 @@
-const currency = 'USD'
-if (currency === 'USD') {
+const currency = 'EUR'
+if (currency === 'EUR') {
   console.log(`Hello {currency}`)
 }
