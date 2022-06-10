@@ -4,6 +4,8 @@ PoC for a git action that rewrites pre-specified strings in code source when new
 # changelog
 - Forcing a change to test fork sync workflow trigger
 - Introducing a new change to test fork rebase flow
-- Examine move line conflict behavior
+- Examine move line conflic? behavior
 - Manual workflow dispatch
 - New ocnflict point
+- Update this currency: EUR
+- Another tight update:<p>EUR</p>
