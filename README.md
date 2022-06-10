@@ -6,3 +6,4 @@ PoC for a git action that rewrites pre-specified strings in code source when new
 - Introducing a new change to test fork rebase flow
 - Examine move line conflict behavior
 - Manual workflow dispatch
+- New ocnflict point
