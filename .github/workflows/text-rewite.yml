@@ -20,7 +20,7 @@ jobs:
           find: "USD"
           replace: "EUR"
           regex: true
-          exclude: ".github/**"
+          exclude: ".git**"
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
