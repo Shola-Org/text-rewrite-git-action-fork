@@ -1,5 +1,5 @@
 function concatSymbols() {
-  const currency = 'USD';
+  const currency = 'mUSD';
   currency.concat('EUR');
-  console.log(currency, 'USD')
+  console.log(currency, 'USD', '_USD', '$USD')
 }

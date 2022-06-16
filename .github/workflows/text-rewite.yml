@@ -17,7 +17,7 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "USD"
+          find: '\bUSD\b'
           replace: "EUR"
           regex: true
           exclude: ".git**"
